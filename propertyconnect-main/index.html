@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Findmyhome</title>
+    <script>
+      // Capture native fetch early to avoid instrumentation wrappers (FullStory, etc.) breaking dev tooling
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && !window.__nativeFetch) {
+            window.__nativeFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
